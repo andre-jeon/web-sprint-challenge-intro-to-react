@@ -62,7 +62,7 @@ Your finished project must include all of the following requirements:
   - [Alternate Star Wars API](https://swapi.py4e.com/)
   - [The Rick and Morty API](https://rickandmortyapi.com/)
   - [The RESTful Pokémon API](https://pokeapi.co/) (**harder**)
-- [ ] Use the documentation and Google to learn how to fetch characters from your API.
+- [✅] Use the documentation and Google to learn how to fetch characters from your API.
 - [ ] Obtain a list of characters. One or several requests might be needed, depending on the API.
 - [ ] Set the list of characters into state.
 - [ ] Render your characters to the screen:

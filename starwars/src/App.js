@@ -14,7 +14,7 @@ const App = () => {
 
         .then(res => {
           setData(res.data)
-          console.log('hi', res)
+          console.log('hi', res.data.results)
         })
         .catch(err => {
           console.log(err)
@@ -29,7 +29,7 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters from Rick and Morty</h1>
-      {/* <Character data = {data} /> */}
+      <Character data = {data} />
     </div>
   );
 }
