@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios'
+import Character from './components/Character'
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -13,12 +14,12 @@ const App = () => {
 
         .then(res => {
           setData(res.data)
-          console.log(res)
+          console.log('hi', res)
         })
         .catch(err => {
           console.log(err)
         })
-        
+
     }, [])
 
   // Fetch characters from the API in an effect hook. Remember, anytime you have a 
@@ -27,7 +28,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
+      <h1 className="Header">Characters from Rick and Morty</h1>
+      {/* <Character data = {data} /> */}
     </div>
   );
 }
