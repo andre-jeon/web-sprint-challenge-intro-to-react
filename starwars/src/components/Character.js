@@ -10,12 +10,28 @@ const StyledDetails = styled.div`
         color: white;
     }
 
+    span {
+        color: black;
+    }
+
+    #alive {
+        color: green;
+    }
+
+    #dead {
+        color: red;
+    }
+
+    #else {
+        color: black;
+    }
 `
 
 function Character(props) {
-    const { data } = props
+    const { data, charCard } = props
 
     return( 
+
         <StyledDetails className="indiviual-character-card">
     
             <div className="character-image">
@@ -29,7 +45,7 @@ function Character(props) {
             <div className="character-name">
             {
                 data.map((char) => {
-                    return <h2>Name: {char.name}</h2>
+                    return <h2>Name: <span>{char.name}</span></h2>
                 })
             }
             </div>
@@ -37,7 +53,13 @@ function Character(props) {
             <div className='character-status'>
             {
                 data.map((char) => {
-                    return <h3>Status: {char.status}</h3>
+                    if (char.status === 'Alive'){
+                        return <h3>Status: <span id='alive'>{char.status}</span></h3>
+                    } else if ((char.status === 'Dead')){
+                        return <h3>Status: <span id='dead'>{char.status}</span></h3>
+                    }else{
+                        return <h3>Status: <span id='else'>{char.status}</span></h3>
+                    }
                 })
             }
             </div>
