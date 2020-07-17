@@ -1,20 +1,25 @@
 // Write your Character component here
 import React from 'react'
+import styled from 'styled-components'
+
+const StyledDetails = styled.div`
+
+    h1 {
+        color: red;
+    }
+
+`
 
 function Character(props) {
-    const { character, setCharacters } = props
+    const {data} = props
 
     return(
         <div className="character-container">
-            <ul>
-                <li>
-                    {
-                    setCharacters(character.map((character) => {
-                        return {character}
-                    }))
-                    }
-                </li>
-           </ul>
+            {
+                data.map((char) => {
+                    return char.name
+                })
+            }
         </div>
     )
 }

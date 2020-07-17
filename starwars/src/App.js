@@ -6,14 +6,14 @@ import Character from './components/Character'
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
-    const [data, setData] = useState('')
+    const [data, setData] = useState([])
 
     useEffect(() =>{
 
       axios.get('https://rickandmortyapi.com/api/character/')
 
         .then(res => {
-          setData(res.data)
+          setData(res.data.results)
           console.log('hi', res.data.results)
         })
         .catch(err => {
