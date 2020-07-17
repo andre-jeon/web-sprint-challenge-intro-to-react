@@ -1,17 +1,21 @@
 // Write your Character component here
 import React from 'react'
 import styled from 'styled-components'
+import Card from './Card'
 
 const StyledDetails = styled.div`
-    
-    /* display:flex; */
 
-    h2 {
-        color: white;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    h3 {
+        color: red;
     }
 
     span {
-        color: black;
+        color: white;
     }
 
     #alive {
@@ -28,42 +32,15 @@ const StyledDetails = styled.div`
 `
 
 function Character(props) {
-    const { data, charCard } = props
+    const { data } = props
 
     return( 
-
-        <StyledDetails className="indiviual-character-card">
-    
-            <div className="character-image">
+        <StyledDetails className="card-container">
             {
-                data.map((char) => {
-                    return <img src = {char.image} />
+                data.map((card) => {
+                    return <Card card = {card} />
                 })
             }
-            </div>
-
-            <div className="character-name">
-            {
-                data.map((char) => {
-                    return <h2>Name: <span>{char.name}</span></h2>
-                })
-            }
-            </div>
-
-            <div className='character-status'>
-            {
-                data.map((char) => {
-                    if (char.status === 'Alive'){
-                        return <h3>Status: <span id='alive'>{char.status}</span></h3>
-                    } else if ((char.status === 'Dead')){
-                        return <h3>Status: <span id='dead'>{char.status}</span></h3>
-                    }else{
-                        return <h3>Status: <span id='else'>{char.status}</span></h3>
-                    }
-                })
-            }
-            </div>
-
         </StyledDetails>
     )
 }
