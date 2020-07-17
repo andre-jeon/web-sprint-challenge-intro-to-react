@@ -3,23 +3,41 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledDetails = styled.div`
+    
+    display:flex;
 
-    h1 {
-        color: red;
+    h2 {
+        color: white;
     }
 
 `
 
 function Character(props) {
-    const {data} = props
+    const { data } = props
 
     return(
         <div className="character-container">
+            
             {
                 data.map((char) => {
-                    return char.name
+                    return <img src = {char.image} />
                 })
             }
+
+
+            {
+                data.map((char) => {
+                    return <h2>{char.name}</h2>
+                })
+            }
+
+            {
+                data.map((char) => {
+                    return <h3>{char.status}</h3>
+                })
+            }
+
+
         </div>
     )
 }
