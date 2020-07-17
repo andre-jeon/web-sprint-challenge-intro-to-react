@@ -29,9 +29,9 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters from Rick and Morty</h1>
-      <Character data = {data} />
+      <Character data = {data} setData = {setData}/>
     </div>
-  );
+  )
 }
 
 export default App;
